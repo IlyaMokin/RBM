@@ -25,8 +25,8 @@ namespace NeuralNetwork.ActivationFunctions
 				var s = neuron.S;
 				var dfRate1 = DF_rate1(s);
 				var dfRate2 = DF_rate2(s);
-				neuron.Parameters[_param1ID] -= (double)((decimal)alpha * (decimal)dfRate1 * neuron.Error);
-				neuron.Parameters[_param2ID] -= (double)((decimal)alpha * (decimal)dfRate2 * neuron.Error);
+				neuron.Parameters[_param1ID] -= alpha * dfRate1 * neuron.Error;
+				neuron.Parameters[_param2ID] -= alpha * dfRate2 * neuron.Error;
 			};
 		}
 

@@ -20,7 +20,7 @@ namespace NeuralNetwork.ActivationFunctions
 			neuron.NeuronStimulus += (alpha) =>
 			{
 				var s = neuron.S;
-				neuron.Parameters[paramID] -= (double)((decimal)alpha * (decimal)DFA(s) * neuron.Error);
+				neuron.Parameters[paramID] -= alpha * DFA(s) * neuron.Error;
 			};
 		}
 		public override double F(double s)

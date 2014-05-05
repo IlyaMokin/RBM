@@ -26,13 +26,13 @@ namespace NeuralNetwork.Teachers
 				{
 					if (i == _layers.Count - 1)
 					{
-						_layers[i].Neurons[k].Error = (decimal)_layers[i].Neurons[k].Out - (decimal)output[k];
+						_layers[i].Neurons[k].Error = _layers[i].Neurons[k].Out - output[k];
 					}
 					else
 					{
 						_layers[i].Neurons[k].Error =
 							_layers[i].Neurons[k].OutputConnections.Sum(x =>
-								x.Neuron.Error * (decimal)x.Parameters[0] * (decimal)x.Neuron.Deriviations[0](x.Neuron.S));
+								x.Neuron.Error * x.Parameters[0] * x.Neuron.Deriviations[0](x.Neuron.S));
 					}
 				}
 			}
@@ -65,10 +65,10 @@ namespace NeuralNetwork.Teachers
 
 						foreach (var neuron in _layers[layerIndex].Neurons)
 						{
-							neuron.Parameters[0] += (double)((decimal)Alpha * neuron.Error * (decimal)neuron.Deriviations[0](neuron.S));
+							neuron.Parameters[0] += Alpha * neuron.Error * neuron.Deriviations[0](neuron.S);
 							neuron.InputConnections.ForEach(inpLink =>
 							{
-								inpLink.Parameters[0] -= (double)((decimal)Alpha * neuron.Error * (decimal)neuron.Deriviations[0](neuron.S) * (decimal)inpLink.Neuron.Out);
+								inpLink.Parameters[0] -= Alpha * neuron.Error * neuron.Deriviations[0](neuron.S) * inpLink.Neuron.Out;
 							});
 							neuron.NeuronStimulus(Alpha);
 						}

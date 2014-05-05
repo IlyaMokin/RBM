@@ -23,6 +23,6 @@ namespace NeuralNetwork.NetworkComponents
 		public IList<double> Parameters = new List<double>();
 		public double S;
 		public double Out;
-		public decimal Error;
+		public double Error;
 	}
 }
