@@ -1,0 +1,53 @@
+{
+    isRecurrentStyle: true,
+    connections: [
+        {from: {layerID: 0, neuronID: 0}, to: {layerID: 1, neuronID: 0}, parameters: [0.3]},
+        {from: {layerID: 0, neuronID: 0}, to: {layerID: 1, neuronID: 1}, parameters: [0.3]},
+
+        {from: {layerID: 0, neuronID: 1}, to: {layerID: 1, neuronID: 0}, parameters: [0.3]},
+        {from: {layerID: 0, neuronID: 1}, to: {layerID: 1, neuronID: 1}, parameters: [0.3]},
+
+
+        {from: {layerID: 1, neuronID: 0}, to: {layerID: 2, neuronID: 0}, parameters: [0.3]},
+
+        {from: {layerID: 1, neuronID: 1}, to: {layerID: 2, neuronID: 0}, parameters: [0.3]},
+
+
+        {from: {layerID: 2, neuronID: 0}, to: {layerID: 1, neuronID: 0}, parameters: [0.3]},
+        {from: {layerID: 2, neuronID: 0}, to: {layerID: 1, neuronID: 1}, parameters: [0.3]}
+    ],
+    layers: [
+        {
+            neurons: [
+                {
+                    parameters: [0.5],
+                    activator: "Sigmoid"
+                },
+                {
+                    parameters: [0.5],
+                    activator: "Sigmoid"
+                }
+            ]
+        },
+        {
+            neurons: [
+                {
+                    parameters: [0.5],
+                    activator: "Sigmoid"
+                },
+                {
+                    parameters: [0.5],
+                    activator: "Sigmoid"
+                }
+            ]
+        },
+        {
+            neurons: [
+                {
+                    parameters: [0.5],
+                    activator: "Sigmoid"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,73 @@
+{
+  "isRecurrentStyle": true,
+  "layers": [
+    {
+      "neurons": [
+        {
+          "activator": "None",
+          "parameters": []
+        },
+        {
+          "activator": "None",
+          "parameters": []
+        },
+        {
+          "activator": "None",
+          "parameters": []
+        }
+      ]
+    },
+    {
+      "neurons": [
+        {
+          "activator": "Sin",
+          "parameters": [
+            1.7635847536656071,
+            0.38554694917311283
+          ]
+        }
+      ]
+    }
+  ],
+  "connections": [
+    {
+      "parameters": [
+        1.7538045290408371
+      ],
+      "to": {
+        "layerID": 1,
+        "neuronID": 0
+      },
+      "from": {
+        "layerID": 0,
+        "neuronID": 0
+      }
+    },
+    {
+      "parameters": [
+        -0.20754971664259203
+      ],
+      "to": {
+        "layerID": 1,
+        "neuronID": 0
+      },
+      "from": {
+        "layerID": 0,
+        "neuronID": 1
+      }
+    },
+    {
+      "parameters": [
+        1.7317766739539551
+      ],
+      "to": {
+        "layerID": 1,
+        "neuronID": 0
+      },
+      "from": {
+        "layerID": 0,
+        "neuronID": 2
+      }
+    }
+  ]
+}

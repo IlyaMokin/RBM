@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NeuralNetwork", "NeuralNetwork\NeuralNetwork.csproj", "{D0445BC0-AD53-4B4D-AE61-5413DB2291E7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples", "Examples", "{D6B40432-5177-46B0-9D4B-0EBD7FC824BD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Henon", "Examples\Henon\Henon.csproj", "{09A6F24D-0A92-4034-9756-3DD33504DE00}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simple", "Examples\Simple\Simple.csproj", "{03D90C4F-57C6-4E45-8F67-793B3C9716E7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntersectionOfTwoLines", "Examples\IntersectionOfTwoLines\IntersectionOfTwoLines.csproj", "{9D81D1AB-26D0-46FA-8F18-80E46796164C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xor", "Examples\XorWithOneHiddenLayer\Xor.csproj", "{37CD10F1-806C-45B2-AD7C-73A943B783A7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D0445BC0-AD53-4B4D-AE61-5413DB2291E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0445BC0-AD53-4B4D-AE61-5413DB2291E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0445BC0-AD53-4B4D-AE61-5413DB2291E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0445BC0-AD53-4B4D-AE61-5413DB2291E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{09A6F24D-0A92-4034-9756-3DD33504DE00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09A6F24D-0A92-4034-9756-3DD33504DE00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09A6F24D-0A92-4034-9756-3DD33504DE00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09A6F24D-0A92-4034-9756-3DD33504DE00}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03D90C4F-57C6-4E45-8F67-793B3C9716E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03D90C4F-57C6-4E45-8F67-793B3C9716E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03D90C4F-57C6-4E45-8F67-793B3C9716E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03D90C4F-57C6-4E45-8F67-793B3C9716E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D81D1AB-26D0-46FA-8F18-80E46796164C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D81D1AB-26D0-46FA-8F18-80E46796164C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D81D1AB-26D0-46FA-8F18-80E46796164C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D81D1AB-26D0-46FA-8F18-80E46796164C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37CD10F1-806C-45B2-AD7C-73A943B783A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37CD10F1-806C-45B2-AD7C-73A943B783A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37CD10F1-806C-45B2-AD7C-73A943B783A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37CD10F1-806C-45B2-AD7C-73A943B783A7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{09A6F24D-0A92-4034-9756-3DD33504DE00} = {D6B40432-5177-46B0-9D4B-0EBD7FC824BD}
+		{03D90C4F-57C6-4E45-8F67-793B3C9716E7} = {D6B40432-5177-46B0-9D4B-0EBD7FC824BD}
+		{9D81D1AB-26D0-46FA-8F18-80E46796164C} = {D6B40432-5177-46B0-9D4B-0EBD7FC824BD}
+		{37CD10F1-806C-45B2-AD7C-73A943B783A7} = {D6B40432-5177-46B0-9D4B-0EBD7FC824BD}
+	EndGlobalSection
+EndGlobal

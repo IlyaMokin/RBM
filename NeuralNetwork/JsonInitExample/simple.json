@@ -1,0 +1,68 @@
+{
+    layers: [
+        {
+            "neurons": [
+                {
+                    "parameters": [],
+                    "inputs": [],
+                    "activator": "Sigmoid"
+                },
+                {
+                    "parameters": [],
+                    "inputs": [],
+                    "activator": "Sigmoid"
+                }
+            ]
+        },
+        {
+            "neurons": [
+                {
+                    "parameters": [0.5],
+                    "activator": "Sigmoid",
+                    "inputs": [
+                        {
+                            "parameters": [0.3],
+                            "connection": { "neuronID": 0}
+                        },
+                        {
+                            "parameters": [0.3],
+                            "connection": { "neuronID": 1}
+                        }
+                    ]
+                },
+                {
+                    "parameters": [0.5],
+                    "activator": "Sigmoid",
+                    "inputs": [
+                        {
+                            "parameters": [0.3],
+                            "connection": { "neuronID": 0}
+                        },
+                        {
+                            "parameters": [0.3],
+                            "connection": { "neuronID": 1}
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "neurons": [
+                {
+                    "parameters": [0.5],
+                    "activator": "Liner",
+                    "inputs": [
+                        {
+                            "parameters": [0.3],
+                            "connection": { "neuronID": 0}
+                        },
+                        {
+                            "parameters": [0.3],
+                            "connection": { "neuronID": 1}
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
