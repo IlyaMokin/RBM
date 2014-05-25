@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace NeuralNetwork.ActivationFunctions.Common
 {
-	delegate double FunctionActivator(double s);
+	public delegate double FunctionActivator(double s);
 
-	delegate void Stimulus(double alpha);
+	public delegate void Stimulus(double alpha);
 }

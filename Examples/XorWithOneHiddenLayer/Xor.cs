@@ -15,7 +15,7 @@ namespace XorWithOneHiddenLayer
 		static void Main(string[] args)
 		{
 
-			int w = 3; //--кол-во элементов множества
+			int w = 2; //--кол-во элементов множества
 			var inputs = new object[(int)Math.Pow(2d, (double)w)]
 				.Select((o, maskIndex) => new double[w]//Перебор возможных масок
 					.Select((val, index) => (maskIndex & (1 << index)) != 0 ? 1d : 0d).ToArray())

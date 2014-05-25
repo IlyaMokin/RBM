@@ -1,0 +1,800 @@
+{
+    "isRecurrentStyle": true,
+    "layers": [
+        {
+            "neurons": [
+                {
+                    "activator": "Gauss",
+                    "parameters": [
+                        0.1,
+                        0.4,
+                        0.16048788496315847
+                    ]
+                },
+                {
+                    "activator": "Gauss",
+                    "parameters": [
+                        0.47355118811761548
+                    ]
+                },
+                {
+                    "activator": "Gauss",
+                    "parameters": [
+                        0.0095678214028327817
+                    ]
+                },
+                {
+                    "activator": "Gauss",
+                    "parameters": [
+                        0.25296491233304369
+                    ]
+                },
+                {
+                    "activator": "Gauss",
+                    "parameters": [
+                        0.15274029022675953
+                    ]
+                },
+                {
+                    "activator": "Gauss",
+                    "parameters": [
+                        0.12163086986245163
+                    ]
+                },
+                {
+                    "activator": "Gauss",
+                    "parameters": [
+                        0.23399164072889445
+                    ]
+                },
+                {
+                    "activator": "Gauss",
+                    "parameters": [
+                        0.34431797817550508
+                    ]
+                }
+            ]
+        },
+        {
+            "neurons": [
+                {
+                    "activator": "Gauss",
+                    "parameters": [
+                        0.2639540297742719
+                    ]
+                },
+                {
+                    "activator": "Gauss",
+                    "parameters": [
+                        0.39742455067924437
+                    ]
+                },
+                {
+                    "activator": "Gauss",
+                    "parameters": [
+                        0.080045931311345631
+                    ]
+                },
+                {
+                    "activator": "Gauss",
+                    "parameters": [
+                        0.41654794612738671
+                    ]
+                },
+                {
+                    "activator": "Gauss",
+                    "parameters": [
+                        0.030860685990592784
+                    ]
+                }
+            ]
+        },
+        {
+            "neurons": [
+                {
+                    "activator": "Liner",
+                    "parameters": [
+                        0.12294147076222182
+                    ]
+                }
+            ]
+        }
+    ],
+    "connections": [
+        {
+            "parameters": [
+                0.074758356471899129
+            ],
+            "to": {
+                "layerID": 1,
+                "neuronID": 0
+            },
+            "from": {
+                "layerID": 0,
+                "neuronID": 0
+            }
+        },
+        {
+            "parameters": [
+                0.2362484807317371
+            ],
+            "to": {
+                "layerID": 1,
+                "neuronID": 0
+            },
+            "from": {
+                "layerID": 0,
+                "neuronID": 1
+            }
+        },
+        {
+            "parameters": [
+                0.0980020666485662
+            ],
+            "to": {
+                "layerID": 1,
+                "neuronID": 0
+            },
+            "from": {
+                "layerID": 0,
+                "neuronID": 2
+            }
+        },
+        {
+            "parameters": [
+                0.1732213120782847
+            ],
+            "to": {
+                "layerID": 1,
+                "neuronID": 0
+            },
+            "from": {
+                "layerID": 0,
+                "neuronID": 3
+            }
+        },
+        {
+            "parameters": [
+                0.22920556516815235
+            ],
+            "to": {
+                "layerID": 1,
+                "neuronID": 0
+            },
+            "from": {
+                "layerID": 0,
+                "neuronID": 4
+            }
+        },
+        {
+            "parameters": [
+                0.48066594404199436
+            ],
+            "to": {
+                "layerID": 1,
+                "neuronID": 0
+            },
+            "from": {
+                "layerID": 0,
+                "neuronID": 5
+            }
+        },
+        {
+            "parameters": [
+                0.087915123946925217
+            ],
+            "to": {
+                "layerID": 1,
+                "neuronID": 0
+            },
+            "from": {
+                "layerID": 0,
+                "neuronID": 6
+            }
+        },
+        {
+            "parameters": [
+                0.46404102978484751
+            ],
+            "to": {
+                "layerID": 1,
+                "neuronID": 0
+            },
+            "from": {
+                "layerID": 0,
+                "neuronID": 7
+            }
+        },
+        {
+            "parameters": [
+                0.35463352331641762
+            ],
+            "to": {
+                "layerID": 1,
+                "neuronID": 1
+            },
+            "from": {
+                "layerID": 0,
+                "neuronID": 0
+            }
+        },
+        {
+            "parameters": [
+                0.42310238579432591
+            ],
+            "to": {
+                "layerID": 1,
+                "neuronID": 1
+            },
+            "from": {
+                "layerID": 0,
+                "neuronID": 1
+            }
+        },
+        {
+            "parameters": [
+                0.070553096509796145
+            ],
+            "to": {
+                "layerID": 1,
+                "neuronID": 1
+            },
+            "from": {
+                "layerID": 0,
+                "neuronID": 2
+            }
+        },
+        {
+            "parameters": [
+                0.19860398545796237
+            ],
+            "to": {
+                "layerID": 1,
+                "neuronID": 1
+            },
+            "from": {
+                "layerID": 0,
+                "neuronID": 3
+            }
+        },
+        {
+            "parameters": [
+                0.0278049192986474
+            ],
+            "to": {
+                "layerID": 1,
+                "neuronID": 1
+            },
+            "from": {
+                "layerID": 0,
+                "neuronID": 4
+            }
+        },
+        {
+            "parameters": [
+                0.27428794990959016
+            ],
+            "to": {
+                "layerID": 1,
+                "neuronID": 1
+            },
+            "from": {
+                "layerID": 0,
+                "neuronID": 5
+            }
+        },
+        {
+            "parameters": [
+                0.1120849776138016
+            ],
+            "to": {
+                "layerID": 1,
+                "neuronID": 1
+            },
+            "from": {
+                "layerID": 0,
+                "neuronID": 6
+            }
+        },
+        {
+            "parameters": [
+                0.24085594305808467
+            ],
+            "to": {
+                "layerID": 1,
+                "neuronID": 1
+            },
+            "from": {
+                "layerID": 0,
+                "neuronID": 7
+            }
+        },
+        {
+            "parameters": [
+                0.0987552290776536
+            ],
+            "to": {
+                "layerID": 1,
+                "neuronID": 2
+            },
+            "from": {
+                "layerID": 0,
+                "neuronID": 0
+            }
+        },
+        {
+            "parameters": [
+                0.47221623732345935
+            ],
+            "to": {
+                "layerID": 1,
+                "neuronID": 2
+            },
+            "from": {
+                "layerID": 0,
+                "neuronID": 1
+            }
+        },
+        {
+            "parameters": [
+                0.023603536898085632
+            ],
+            "to": {
+                "layerID": 1,
+                "neuronID": 2
+            },
+            "from": {
+                "layerID": 0,
+                "neuronID": 2
+            }
+        },
+        {
+            "parameters": [
+                0.18932669246072262
+            ],
+            "to": {
+                "layerID": 1,
+                "neuronID": 2
+            },
+            "from": {
+                "layerID": 0,
+                "neuronID": 3
+            }
+        },
+        {
+            "parameters": [
+                0.18718777512534884
+            ],
+            "to": {
+                "layerID": 1,
+                "neuronID": 2
+            },
+            "from": {
+                "layerID": 0,
+                "neuronID": 4
+            }
+        },
+        {
+            "parameters": [
+                0.43445351623671757
+            ],
+            "to": {
+                "layerID": 1,
+                "neuronID": 2
+            },
+            "from": {
+                "layerID": 0,
+                "neuronID": 5
+            }
+        },
+        {
+            "parameters": [
+                0.27040258691199243
+            ],
+            "to": {
+                "layerID": 1,
+                "neuronID": 2
+            },
+            "from": {
+                "layerID": 0,
+                "neuronID": 6
+            }
+        },
+        {
+            "parameters": [
+                0.017439457596018657
+            ],
+            "to": {
+                "layerID": 1,
+                "neuronID": 2
+            },
+            "from": {
+                "layerID": 0,
+                "neuronID": 7
+            }
+        },
+        {
+            "parameters": [
+                0.0044404286911899358
+            ],
+            "to": {
+                "layerID": 1,
+                "neuronID": 3
+            },
+            "from": {
+                "layerID": 0,
+                "neuronID": 0
+            }
+        },
+        {
+            "parameters": [
+                0.34506489538823482
+            ],
+            "to": {
+                "layerID": 1,
+                "neuronID": 3
+            },
+            "from": {
+                "layerID": 0,
+                "neuronID": 1
+            }
+        },
+        {
+            "parameters": [
+                0.034777235954430531
+            ],
+            "to": {
+                "layerID": 1,
+                "neuronID": 3
+            },
+            "from": {
+                "layerID": 0,
+                "neuronID": 2
+            }
+        },
+        {
+            "parameters": [
+                0.065866663151358557
+            ],
+            "to": {
+                "layerID": 1,
+                "neuronID": 3
+            },
+            "from": {
+                "layerID": 0,
+                "neuronID": 3
+            }
+        },
+        {
+            "parameters": [
+                0.30006447075869164
+            ],
+            "to": {
+                "layerID": 1,
+                "neuronID": 3
+            },
+            "from": {
+                "layerID": 0,
+                "neuronID": 4
+            }
+        },
+        {
+            "parameters": [
+                0.15280616942458142
+            ],
+            "to": {
+                "layerID": 1,
+                "neuronID": 3
+            },
+            "from": {
+                "layerID": 0,
+                "neuronID": 5
+            }
+        },
+        {
+            "parameters": [
+                0.25375735887966927
+            ],
+            "to": {
+                "layerID": 1,
+                "neuronID": 3
+            },
+            "from": {
+                "layerID": 0,
+                "neuronID": 6
+            }
+        },
+        {
+            "parameters": [
+                0.0074060123913949416
+            ],
+            "to": {
+                "layerID": 1,
+                "neuronID": 3
+            },
+            "from": {
+                "layerID": 0,
+                "neuronID": 7
+            }
+        },
+        {
+            "parameters": [
+                0.23415921080585533
+            ],
+            "to": {
+                "layerID": 1,
+                "neuronID": 4
+            },
+            "from": {
+                "layerID": 0,
+                "neuronID": 0
+            }
+        },
+        {
+            "parameters": [
+                0.050473900302533944
+            ],
+            "to": {
+                "layerID": 1,
+                "neuronID": 4
+            },
+            "from": {
+                "layerID": 0,
+                "neuronID": 1
+            }
+        },
+        {
+            "parameters": [
+                0.024985487351652926
+            ],
+            "to": {
+                "layerID": 1,
+                "neuronID": 4
+            },
+            "from": {
+                "layerID": 0,
+                "neuronID": 2
+            }
+        },
+        {
+            "parameters": [
+                0.22008493762467288
+            ],
+            "to": {
+                "layerID": 1,
+                "neuronID": 4
+            },
+            "from": {
+                "layerID": 0,
+                "neuronID": 3
+            }
+        },
+        {
+            "parameters": [
+                0.013324664446210797
+            ],
+            "to": {
+                "layerID": 1,
+                "neuronID": 4
+            },
+            "from": {
+                "layerID": 0,
+                "neuronID": 4
+            }
+        },
+        {
+            "parameters": [
+                0.19140230035008971
+            ],
+            "to": {
+                "layerID": 1,
+                "neuronID": 4
+            },
+            "from": {
+                "layerID": 0,
+                "neuronID": 5
+            }
+        },
+        {
+            "parameters": [
+                0.11853145487538142
+            ],
+            "to": {
+                "layerID": 1,
+                "neuronID": 4
+            },
+            "from": {
+                "layerID": 0,
+                "neuronID": 6
+            }
+        },
+        {
+            "parameters": [
+                0.21020072335852344
+            ],
+            "to": {
+                "layerID": 1,
+                "neuronID": 4
+            },
+            "from": {
+                "layerID": 0,
+                "neuronID": 7
+            }
+        },
+        {
+            "parameters": [
+                0.18243203926013413
+            ],
+            "to": {
+                "layerID": 2,
+                "neuronID": 0
+            },
+            "from": {
+                "layerID": 1,
+                "neuronID": 0
+            }
+        },
+        {
+            "parameters": [
+                0.46188389950519609
+            ],
+            "to": {
+                "layerID": 2,
+                "neuronID": 0
+            },
+            "from": {
+                "layerID": 1,
+                "neuronID": 1
+            }
+        },
+        {
+            "parameters": [
+                0.44574626881896812
+            ],
+            "to": {
+                "layerID": 2,
+                "neuronID": 0
+            },
+            "from": {
+                "layerID": 1,
+                "neuronID": 2
+            }
+        },
+        {
+            "parameters": [
+                0.23527987149324262
+            ],
+            "to": {
+                "layerID": 2,
+                "neuronID": 0
+            },
+            "from": {
+                "layerID": 1,
+                "neuronID": 3
+            }
+        },
+        {
+            "parameters": [
+                0.14087993471924212
+            ],
+            "to": {
+                "layerID": 2,
+                "neuronID": 0
+            },
+            "from": {
+                "layerID": 1,
+                "neuronID": 4
+            }
+        },
+
+
+
+
+
+
+        {
+            "parameters": [
+                0.2304101652607369
+            ],
+            "to": {
+                "layerID": 0,
+                "neuronID": 0
+            },
+            "from": {
+                "layerID": 2,
+                "neuronID": 0
+            }
+        },
+        {
+            "parameters": [
+                0.2304101652607369
+            ],
+            "to": {
+                "layerID": 0,
+                "neuronID": 1
+            },
+            "from": {
+                "layerID": 2,
+                "neuronID": 0
+            }
+        },
+        {
+            "parameters": [
+                0.2304101652607369
+            ],
+            "to": {
+                "layerID": 0,
+                "neuronID": 2
+            },
+            "from": {
+                "layerID": 2,
+                "neuronID": 0
+            }
+        },
+        {
+            "parameters": [
+                0.2304101652607369
+            ],
+            "to": {
+                "layerID": 0,
+                "neuronID": 3
+            },
+            "from": {
+                "layerID": 2,
+                "neuronID": 0
+            }
+        },
+        {
+            "parameters": [
+                0.2304101652607369
+            ],
+            "to": {
+                "layerID": 0,
+                "neuronID": 4
+            },
+            "from": {
+                "layerID": 2,
+                "neuronID": 0
+            }
+        },
+        {
+            "parameters": [
+                0.2304101652607369
+            ],
+            "to": {
+                "layerID": 0,
+                "neuronID": 5
+            },
+            "from": {
+                "layerID": 2,
+                "neuronID": 0
+            }
+        },
+        {
+            "parameters": [
+                0.2304101652607369
+            ],
+            "to": {
+                "layerID": 0,
+                "neuronID": 6
+            },
+            "from": {
+                "layerID": 2,
+                "neuronID": 0
+            }
+        },
+        {
+            "parameters": [
+                0.2304101652607369
+            ],
+            "to": {
+                "layerID": 0,
+                "neuronID": 7
+            },
+            "from": {
+                "layerID": 2,
+                "neuronID": 0
+            }
+        }
+    ]
+}

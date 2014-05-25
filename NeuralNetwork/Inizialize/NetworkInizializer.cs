@@ -26,7 +26,7 @@ namespace NeuralNetwork.Inizialize
 				foreach (var neuron in neurons)
 				{
 					var networkNeuron = new Neuron();
-					networkNeuron.Parameters = JsonConvert.DeserializeObject<double[]>(neuron["parameters"].ToString());
+					networkNeuron.Parameters = JsonConvert.DeserializeObject<double[]>(neuron["parameters"].ToString()).ToList();
 
 					var activationFunc = functionsFactory.GetActivationFunction((string)neuron["activator"], networkNeuron);
 					networkNeuron.ActivationF = activationFunc.F;
@@ -87,8 +87,8 @@ namespace NeuralNetwork.Inizialize
 					toNeuron = network.Layers[to.layerID].Neurons[to.neuronID];
 
 				Connection
-					connection = new Connection { Neuron = toNeuron, Parameters = parameters },
-					backConnection = new Connection { Neuron = fromNeuron, Parameters = parameters };
+					connection = new Connection { Neuron = toNeuron, Parameters = parameters.ToList() },
+					backConnection = new Connection { Neuron = fromNeuron, Parameters = parameters.ToList() };
 
 				fromNeuron.OutputConnections.Add(connection);
 				toNeuron.InputConnections.Add(backConnection);

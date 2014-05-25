@@ -50,7 +50,7 @@ namespace NeuralNetwork.ActivationFunctions
 			double c =
 				Math.Exp(-temp * 0.5 * Math.Pow(sigma, -2));
 
-			return c * -temp * 0.5 * Math.Pow(sigma, -3);
+			return c * temp  * Math.Pow(sigma, -3);
 		}
 
 		private double DF_rate2(double s)
@@ -60,7 +60,7 @@ namespace NeuralNetwork.ActivationFunctions
 			double temp = Math.Pow(s - m, 2);
 			double c =
 				Math.Exp(-temp * 0.5 * Math.Pow(sigma, -2));
-			return c * (-s + m) * Math.Pow(sigma, -2);
+			return c * (s - m) * Math.Pow(sigma, -2);
 		}
 	}
 }

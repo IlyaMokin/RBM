@@ -5,7 +5,7 @@ using System.Text;
 
 namespace NeuralNetwork.NetworkComponents
 {
-	class Layer
+	public class Layer
 	{
 		public IList<Neuron> Neurons = new List<Neuron>();
 	}

@@ -4,15 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D0445BC0-AD53-4B4D-AE61-5413DB2291E7}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{619FC170-39B2-4682-A0A9-0511928B6A3A}</ProjectGuid>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>NeuralNetwork</RootNamespace>
-    <AssemblyName>NeuralNetwork</AssemblyName>
+    <RootNamespace>HenonRbm</RootNamespace>
+    <AssemblyName>HenonRbm</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -22,6 +23,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -30,12 +32,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.6.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -43,39 +41,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ActivationFunctions\BipolarSigmoid.cs" />
-    <Compile Include="ActivationFunctions\Bithreshold.cs" />
-    <Compile Include="ActivationFunctions\Common\ActivationFunction.cs" />
-    <Compile Include="ActivationFunctions\Common\ActivationFunctionEnum.cs" />
-    <Compile Include="ActivationFunctions\Common\Delegates.cs" />
-    <Compile Include="ActivationFunctions\Common\FunctionsFactory.cs" />
-    <Compile Include="ActivationFunctions\ExpSin.cs" />
-    <Compile Include="ActivationFunctions\Gauss.cs" />
-    <Compile Include="ActivationFunctions\GaussStat.cs" />
-    <Compile Include="ActivationFunctions\GiperbalTan.cs" />
-    <Compile Include="ActivationFunctions\None.cs" />
-    <Compile Include="ActivationFunctions\Liner.cs" />
-    <Compile Include="ActivationFunctions\Sigmoid.cs" />
-    <Compile Include="ActivationFunctions\Sin.cs" />
-    <Compile Include="ActivationFunctions\Threshold.cs" />
-    <Compile Include="CsvStatistic.cs" />
-    <Compile Include="Inizialize\LayerInfo.cs" />
-    <Compile Include="Inizialize\NeuronInfo.cs" />
-    <Compile Include="NetworkComponents\Layer.cs" />
-    <Compile Include="NetworkComponents\Link.cs" />
-    <Compile Include="Network.cs" />
-    <Compile Include="NetworkComponents\Neuron.cs" />
-    <Compile Include="Inizialize\NetworkInizializer.cs" />
+    <Compile Include="HenonRbm.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Teachers\RBM.cs" />
-    <Compile Include="Teachers\GradientDescedent.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="JsonInitExample\RBM_8_5_1.json" />
-    <None Include="JsonInitExample\recurent.json" />
-    <None Include="JsonInitExample\simple.json" />
+    <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\NeuralNetwork\NeuralNetwork.csproj">
+      <Project>{d0445bc0-ad53-4b4d-ae61-5413db2291e7}</Project>
+      <Name>NeuralNetwork</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -33,18 +33,30 @@ namespace NeuralNetwork
 					var func = functionsFactory.GetActivationFunction(layer.ActivationFunction, nNeuron);
 					nNeuron.ActivationF = func.F;
 
-					if (layerID == 0) continue;
 
-					nNeuron.Parameters.Add(random.NextDouble()/2);
+					nNeuron.Parameters.Add(random.NextDouble() / 2);
 					nNeuron.Deriviations = new List<FunctionActivator> { func.DF, func.DDF };
 
+					if (layerID == 0) continue;
 					foreach (var prevLayerNeuron in Layers[layerID - 1].Neurons)
 					{
-						var backConnection = new Connection { Neuron = prevLayerNeuron, Parameters = new List<double> { random.NextDouble()/2 } };
+						var backConnection = new Connection { Neuron = prevLayerNeuron, Parameters = new List<double> { random.NextDouble() / 2 } };
 						var connection = new Connection { Neuron = nNeuron, Parameters = backConnection.Parameters };
 
 						nNeuron.InputConnections.Add(backConnection);
 						prevLayerNeuron.OutputConnections.Add(connection);
+					}
+
+					if (layer.Recurent != -1)
+					{
+						foreach (var nextLayerNeuron in Layers[layer.Recurent].Neurons)
+						{
+							var nextConnection = new Connection { Neuron = nextLayerNeuron, Parameters = new List<double> { random.NextDouble() / 2 } };
+							var backconnection = new Connection { Neuron = nNeuron, Parameters = nextConnection.Parameters };
+
+							nNeuron.OutputConnections.Add(nextConnection);
+							nextLayerNeuron.InputConnections.Add(backconnection);
+						}
 					}
 				}
 			}
@@ -52,19 +64,19 @@ namespace NeuralNetwork
 
 		internal IList<Layer> Layers = new List<Layer>();
 
-		public double[] GetResult(double[] inputs)
+		public double[] GetResult(double[] inputs, int from = 0)
 		{
 			for (int i = 0; i < inputs.Length; i++)
 			{
 				Layers[0].Neurons[i].Out = inputs[i];
 			}
-			Calculate();
+			Calculate(from);
 			return Layers.Last().Neurons.Select(x => x.Out).ToArray();
 		}
 
-		protected virtual void Calculate()
+		protected virtual void Calculate(int from = 0)
 		{
-			for (int i = 1; i < Layers.Count; i++)
+			for (int i = from; i < Layers.Count; i++)
 			{
 				foreach (var neuron in Layers[i].Neurons)
 				{
@@ -84,13 +96,13 @@ namespace NeuralNetwork
 			}
 		}
 
-		public double GetAbsoluteError(IEnumerable<double[]> inputs, IEnumerable<double[]> outputs, double threshold = 0)
+		public double GetAbsoluteError(IEnumerable<double[]> inputs, IEnumerable<double[]> outputs, double threshold = 0, int from = 1)
 		{
 			double sum = 0.0;
 			var outp = outputs.ToList();
 			for (int i = 0; i < outputs.Count(); i++)
 			{
-				double[] res = GetResult(inputs.ElementAt(i));
+				double[] res = GetResult(inputs.ElementAt(i), from);
 
 				if (double.NaN.Equals(res[0]))
 				{

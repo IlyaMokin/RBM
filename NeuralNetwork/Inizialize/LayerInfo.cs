@@ -11,6 +11,7 @@ namespace NeuralNetwork.Inizialize
 	{
 		public int CountNeuronsInLayer { get; set; }
 		public ActivationFunctionEnum ActivationFunction = ActivationFunctionEnum.None;
+		public int Recurent = -1;
 
 		IEnumerable<NeuronInfo> Neurons
 		{

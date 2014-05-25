@@ -10,7 +10,7 @@ namespace NeuralNetwork.Teachers
 	public class GradientDescent
 	{
 		protected Network _network;
-		private IList<Layer> _layers;
+		protected IList<Layer> _layers;
 
 		public GradientDescent(Network network)
 		{
@@ -18,9 +18,9 @@ namespace NeuralNetwork.Teachers
 			this._network = network;
 		}
 
-		protected void CalculateError(double[] output)
+		protected void CalculateError(double[] output, int from = 1)
 		{
-			for (int i = _layers.Count - 1; i > 0; i--)
+			for (int i = _layers.Count - 1; i >= from; i--)
 			{
 				for (int k = 0; k < _layers[i].Neurons.Count; k++)
 				{
@@ -44,18 +44,19 @@ namespace NeuralNetwork.Teachers
 		protected double Error = 0;
 
 		public virtual double RunEpoch(
-			IEnumerable<double[]> inputs, 
-			IEnumerable<double[]> outputs, 
-			bool optimize = false, 
-			int teachLayerIndex = -1)
+			IEnumerable<double[]> inputs,
+			IEnumerable<double[]> outputs,
+			bool optimize = false,
+			int teachLayerIndex = -1,
+			int from = 1)
 		{
 
 			for (int i = 0; i < inputs.Count(); i++)
 			{
-				double[] result = _network.GetResult(inputs.ElementAt(i));
+				double[] result = _network.GetResult(inputs.ElementAt(i), from);
 				if (GetErrorForElement(result, outputs.ElementAt(i)) > Threshold)
 				{
-					CalculateError(outputs.ElementAt(i));
+					CalculateError(outputs.ElementAt(i), from);
 					for (int layerIndex = _layers.Count - 1; layerIndex > 0; layerIndex--)
 					{
 						if (teachLayerIndex != -1 && teachLayerIndex != layerIndex)

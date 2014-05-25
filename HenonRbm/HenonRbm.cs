@@ -10,9 +10,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Henon
+namespace HenonRbm
 {
-	class Henon
+	class HenonRbm
 	{
 		static IEnumerable<double> GetHenonList(int number)
 		{
@@ -42,25 +42,26 @@ namespace Henon
 			double[][] input = henon
 						.Select((h, index) => new { groupValue = index % 8 != 0 || index == 0 ? helpValue : ++helpValue, value = h })
 						.GroupBy(v => v.groupValue, (key, values) => values.Select(x => x.value).ToArray())
-						.Take(374)
+						.Take(40)
 						.ToArray();
 
-			double[][] output = henon
+			/*double[][] output = henon
 						.Skip(8)
 						.Where((x, index) => index % 8 == 0)
-						.Select(x => new[] { x }).ToArray();
+						.Select(x => new[] { x }).ToArray();*/
+			double[][] output = input;
 
 			var network = new Network(
 				new LayerInfo { CountNeuronsInLayer = 8, ActivationFunction = ActivationFunctionEnum.Gauss },
 				new LayerInfo { CountNeuronsInLayer = 5, ActivationFunction = ActivationFunctionEnum.Gauss },
-				new LayerInfo { CountNeuronsInLayer = 1, ActivationFunction = ActivationFunctionEnum.Liner }
-			);/**/
+				new LayerInfo { CountNeuronsInLayer = 8, ActivationFunction = ActivationFunctionEnum.Liner, Recurent = 0 }
+			);
 			//var network = Network.Inizialize(@"E:\Code\NeuralNetworkModern\NeuralNetwork\JsonInitExample\RBM_8_5_1.json");
 			//network.Serialize("RBM_8_5_1.json");
-			
+
 
 			var teacher = new RBM(network);
-			teacher.Alpha = 0.025;
+			teacher.Alpha = 0.0025;
 			double
 				err = 0,
 				lastErr = 100,
@@ -71,18 +72,7 @@ namespace Henon
 
 			do
 			{
-				teacher.Alpha = teacher.Alpha > 0.0001 ? teacher.Alpha / 1.2 : 0.0001;
-
-				for (var id = 0; id < 3; id += 1)
-				{
-					do
-					{
-						err = teacher.RunEpoch(input, output, false, id);
-						lastErr = err;
-						if (counter++ % 100 == 0) Console.WriteLine(string.Format("{0} / {1} / {2} / {3}", err, counter, id, teacher.Alpha));
-					} while (err > 0.01 && counter % 200 != 0);
-				}
-
+				//teacher.Alpha = teacher.Alpha > 0.0001 ? teacher.Alpha / 1.2 : 0.0001;
 				do
 				{
 					err = teacher.RunEpoch(input, output);

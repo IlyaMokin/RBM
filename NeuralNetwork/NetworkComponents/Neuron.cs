@@ -10,7 +10,7 @@ namespace NeuralNetwork.NetworkComponents
 {
 
 
-	class Neuron
+	public class Neuron
 	{
 		public List<Connection> InputConnections = new List<Connection>();
 		public List<Connection> OutputConnections = new List<Connection>();
@@ -22,7 +22,17 @@ namespace NeuralNetwork.NetworkComponents
 
 		public IList<double> Parameters = new List<double>();
 		public double S;
-		public double Out;
+		public double LastValue;
+		private double _out;
+		public double Out
+		{
+			get { return _out; }
+			set 
+			{
+				LastValue = _out;
+				_out = value; 
+			}
+		}
 		public double Error;
 	}
 }

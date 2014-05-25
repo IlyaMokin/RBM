@@ -5,7 +5,7 @@ using System.Text;
 
 namespace NeuralNetwork.NetworkComponents
 {
-	class Connection
+	public class Connection
 	{
 		public IList<double> Parameters;
 		public Neuron Neuron;
