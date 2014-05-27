@@ -21,11 +21,19 @@ namespace NeuralNetwork.Teachers
 		{
 			for (int i = 0; i < inputs.Count(); i++)
 			{
-				_network.GetResult(inputs.ElementAt(i), 1);
-				_network.GetResult(inputs.ElementAt(i), 0);
+				_network.GetResult(inputs.ElementAt(i));
 				CalculateError(outputs.ElementAt(i), 1);
-
 				for (int layerIndex = _layers.Count - 1; layerIndex > 0; layerIndex--)
+				{
+					foreach (var neuron in _layers[layerIndex].Neurons)
+					{
+						neuron.NeuronStimulus(Alpha);
+					}
+				}
+				_network.GetResultBack(inputs.ElementAt(i));
+				
+
+				for (int layerIndex = _layers.Count - 2; layerIndex > 0; layerIndex--)
 				{
 					if (!(teachLayerIndex == -1 || teachLayerIndex == layerIndex))
 					{

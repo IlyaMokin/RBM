@@ -74,6 +74,25 @@ namespace NeuralNetwork
 			return Layers.Last().Neurons.Select(x => x.Out).ToArray();
 		}
 
+		public double[] GetResultBack(double[] inputs, int from = 0)
+		{
+			for (int i = 0; i < inputs.Length; i++)
+			{
+				Layers.Last().Neurons[i].Out = inputs[i];
+			}
+
+			for (int i = Layers.Count - 1; i > -1; i--)
+			{
+				foreach (var neuron in Layers[i].Neurons)
+				{
+					neuron.S = neuron.OutputConnections.Sum(x => x.Parameters[0] * x.Neuron.Out) - neuron.Parameters[0];
+					neuron.Out = neuron.ActivationF(neuron.S);
+				}
+			}
+
+			return Layers.First().Neurons.Select(x => x.Out).ToArray();
+		}
+
 		protected virtual void Calculate(int from = 0)
 		{
 			for (int i = from; i < Layers.Count; i++)
