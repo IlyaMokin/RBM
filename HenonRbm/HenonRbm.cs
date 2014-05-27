@@ -52,16 +52,15 @@ namespace HenonRbm
 			double[][] output = input;
 
 			var network = new Network(
-				new LayerInfo { CountNeuronsInLayer = 8, ActivationFunction = ActivationFunctionEnum.Gauss },
-				new LayerInfo { CountNeuronsInLayer = 5, ActivationFunction = ActivationFunctionEnum.Gauss },
-				new LayerInfo { CountNeuronsInLayer = 8, ActivationFunction = ActivationFunctionEnum.Liner, Recurent = 0 }
+				new LayerInfo { CountNeuronsInLayer = 8, ActivationFunction = ActivationFunctionEnum.Sigmoid },
+				new LayerInfo { CountNeuronsInLayer = 8, ActivationFunction = ActivationFunctionEnum.Sigmoid, Recurent = 0 }
 			);
 			//var network = Network.Inizialize(@"E:\Code\NeuralNetworkModern\NeuralNetwork\JsonInitExample\RBM_8_5_1.json");
 			//network.Serialize("RBM_8_5_1.json");
 
 
-			var teacher = new RBM(network);
-			teacher.Alpha = 0.0025;
+			GradientDescent teacher = new RBM(network);
+			teacher.Alpha = 0.025;
 			double
 				err = 0,
 				lastErr = 100,
@@ -70,6 +69,24 @@ namespace HenonRbm
 			int
 				counter = 0;
 
+			for (int i = 0; i < 5000; i += 1)
+			{
+				err = teacher.RunEpoch(input, output, false, 1);
+				lastErr = err;
+				if (counter++ % 100 == 0) Console.WriteLine(string.Format("{0:f4} / {1:f4}//{2:f4}", err, counter, teacher.Alpha));
+			}
+			for (int i = 0; i < 5000; i += 1)
+			{
+				err = teacher.RunEpoch(input, output, false, 2);
+				lastErr = err;
+				if (counter++ % 100 == 0) Console.WriteLine(string.Format("{0:f4} / {1:f4}//{2:f4}", err, counter, teacher.Alpha));
+			}
+
+			Console.WriteLine("-------"); Console.ReadKey();
+
+
+			teacher = new GradientDescent(network);
+			teacher.Alpha = 0.025;
 			do
 			{
 				//teacher.Alpha = teacher.Alpha > 0.0001 ? teacher.Alpha / 1.2 : 0.0001;
