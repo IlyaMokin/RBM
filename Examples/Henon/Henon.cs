@@ -59,7 +59,7 @@ namespace Henon
 			//network.Serialize("RBM_8_5_1.json");
 			
 
-			var teacher = new RBM(network);
+			var teacher = new GradientDescent(network);
 			teacher.Alpha = 0.025;
 			double
 				err = 0,

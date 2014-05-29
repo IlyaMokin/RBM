@@ -34,7 +34,7 @@ namespace Simple
 			do
 			{
 				err = teacher.RunEpoch(input, output);
-				if (teacher.IterationCounter % 1000 == 0)
+				if (teacher.IterationCounter % 2000 == 0)
 				{
 					Console.WriteLine(err);
 				}

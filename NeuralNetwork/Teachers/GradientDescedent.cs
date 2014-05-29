@@ -66,7 +66,7 @@ namespace NeuralNetwork.Teachers
 
 						foreach (var neuron in _layers[layerIndex].Neurons)
 						{
-							neuron.Parameters[0] += Alpha * neuron.Error * neuron.Deriviations[0](neuron.S);
+							neuron.Parameters[0] -= Alpha * neuron.Error * neuron.Deriviations[0](neuron.S);
 							neuron.InputConnections.ForEach(inpLink =>
 							{
 								inpLink.Parameters[0] -= Alpha * neuron.Error * neuron.Deriviations[0](neuron.S) * inpLink.Neuron.Out;

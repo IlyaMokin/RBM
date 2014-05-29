@@ -19,19 +19,20 @@ namespace NeuralNetwork.Teachers
 			int teachLayerIndex = -1,
 			int from = 1)
 		{
+			Error=0;
 			for (int i = 0; i < inputs.Count(); i++)
 			{
 				_network.GetResult(inputs.ElementAt(i));
-				CalculateError(outputs.ElementAt(i), 1);
+				/*CalculateError(outputs.ElementAt(i), 1);
 				for (int layerIndex = _layers.Count - 1; layerIndex > 0; layerIndex--)
 				{
 					foreach (var neuron in _layers[layerIndex].Neurons)
 					{
 						neuron.NeuronStimulus(Alpha);
 					}
-				}
-				_network.GetResultBack(inputs.ElementAt(i));
-				
+				}/**/
+				_network.GetResultBack();
+
 
 				for (int layerIndex = _layers.Count - 2; layerIndex > 0; layerIndex--)
 				{
@@ -50,11 +51,25 @@ namespace NeuralNetwork.Teachers
 						neuron.NeuronStimulus(Alpha);
 					}
 				}
-
+				Error += GetSumEnergy();
 			}
-			Error = _network.GetAbsoluteError(inputs, outputs, Threshold);
+			
 			IterationCounter += 1;
 			return Error;
+		}
+
+		private double GetSumEnergy()
+		{
+			var sum = 0d;
+			for (int layerIndex = _layers.Count - 2; layerIndex > 0; layerIndex--)
+			{
+
+				foreach (var neuron in _layers[layerIndex].Neurons)
+				{
+					sum += Math.Pow(neuron.LastValue - neuron.Out, 2) / 2;
+				}
+			}
+			return sum;
 		}
 	}
 }
